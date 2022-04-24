@@ -1,12 +1,17 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var characters;
 var passwordLength;
 var confirmLower;
 var confirmUpper;
 var confirmNumber;
 var confirmSpecial;
-var characters;
+
+upperCase = lowerCase.map(toUpper);
+//--------------------------------------
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 // Var To Upper Case ------------
@@ -14,10 +19,6 @@ var blankUpper = [];
 var toUpper = function (x) {
   return x.toUpperCase();
 };
-upperCase = lowerCase.map(toUpper);
-//--------------------------------------
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 
 // Write password to the #password input
 function writePassword() {
@@ -31,7 +32,6 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// Start Function
 function generatePassword() {
   // Ask four user Input
   passwordLength = prompt("How many characters would you like your password? Choose between 8 and 128");
@@ -127,9 +127,6 @@ function generatePassword() {
     characters = special;
     console.log(characters);
   }
-
-  // Empty variable for the password lenght
-  var passwordBlank = [];
   
   // Loop for random selection
   for (var i = 0; i < passwordLength; i++) {
@@ -137,10 +134,12 @@ function generatePassword() {
     passwordBlank.push(allChoices);
     console.log(allChoices);
   }
+  
+  // Empty variable for the password length
+  var passwordBlank = [];
 
   // Join and return the password 
   var password = passwordBlank.join("");
   console.log("Your Pasword is: " + password);
   return password;
-  
-}
+ }
