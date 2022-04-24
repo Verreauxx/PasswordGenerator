@@ -13,7 +13,7 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var blankUpper = [];
 var toUpper = function (x) {
   return x.toUpperCase();
-};
+}
 upperCase = lowerCase.map(toUpper);
 //--------------------------------------
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -130,14 +130,12 @@ function generatePassword() {
 
   var passwordBlank = [];
   
-  // Loop for random selection
   for (var i = 0; i < passwordLength; i++) {
     var allChoices = characters[Math.floor(Math.random() * characters.length)];
     passwordBlank.push(allChoices);
     console.log(allChoices);
   }
 
-  // Join and return the password 
   var password = passwordBlank.join("");
   console.log("Your Pasword is: " + password);
   return password;
